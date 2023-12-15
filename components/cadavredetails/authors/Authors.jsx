@@ -1,22 +1,13 @@
 import { View, Text } from "react-native";
 
-import styles from "./specifics.style";
+import styles from "./authors.style";
 
-const Specifics = ({ title, points }) => {
+const Authors = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>{title}:</Text>
-
-      <View style={styles.pointsContainer}>
-        {points.map((item, index) => (
-          <View style={styles.pointWrapper} key={item + index}>
-            <View style={styles.pointDot} />
-            <Text style={styles.pointText}>{item}</Text>
-          </View>
-        ))}
-      </View>
+    <View>
+      <Text>Authors</Text>
     </View>
   );
 };
 
-export default Specifics;
+export default Authors;

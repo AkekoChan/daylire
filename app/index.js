@@ -1,10 +1,19 @@
-import { View, Text } from "react-native";
+import { View, SafeAreaView, ScrollView, Text } from "react-native";
+import { Stack, useRouter } from "expo-router";
+
+import { COLORS, icons, images, SIZES } from "../constants";
 
 const Home = () => {
   return (
-    <View>
+    <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
+      <Stack.Screen
+        options={{
+          headerShadowVisible: true,
+        }}
+      />
+
       <Text>Home</Text>
-    </View>
+    </SafeAreaView>
   );
 };
 
