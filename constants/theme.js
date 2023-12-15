@@ -1,19 +1,18 @@
 const COLORS = {
-  primary: "#312651",
-  secondary: "#444262",
-  tertiary: "#FF7754",
+  primary: "#CAECAB",
+  secondary: "#28292D",
+  tertiary: "#91B174",
 
-  gray: "#83829A",
-  gray2: "#C1C0C8",
+  gray: "#808080",
+  gray2: "#DEDEDE",
 
-  white: "#F3F4F8",
-  lightWhite: "#FAFAFC",
+  white: "#FFFFFF",
 };
 
 const FONT = {
-  regular: "DMRegular",
-  medium: "DMMedium",
-  bold: "DMBold",
+  senRegular: "SenRegular",
+  senBold: "SenBold",
+  bodoniBold: "BodoniModaBold",
 };
 
 const SIZES = {
@@ -26,25 +25,15 @@ const SIZES = {
 };
 
 const SHADOWS = {
-  small: {
-    shadowColor: "#000",
+  custom: {
+    shadowColor: "#636363",
     shadowOffset: {
       width: 0,
       height: 2,
     },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 2,
-  },
-  medium: {
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 5.84,
-    elevation: 5,
+    shadowOpacity: 0.2,
+    shadowRadius: 8,
+    elevation: 0,
   },
 };
 
