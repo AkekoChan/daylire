@@ -10,4 +10,4 @@ const CadavreCard = () => {
   );
 };
 
-export default PopularJobCard;
+export default CadavreCard;

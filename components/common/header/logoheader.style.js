@@ -1,24 +1,25 @@
 import { StyleSheet } from "react-native";
 
-import { COLORS, SIZES, SHADOWS } from "../../../constants";
+import { COLORS, SIZES, FONT } from "../../../constants";
 
 const styles = StyleSheet.create({
   btnContainer: {
-    width: 42,
-    height: 42,
+    width: SIZES.xxLarge * 2,
+    height: SIZES.xxLarge * 2,
     backgroundColor: COLORS.white,
-    borderRadius: SIZES.small / 1.25,
+    flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    borderColor: COLORS.gray2,
-    borderWidth: SIZES.small / 10,
-    ...SHADOWS.custom,
+    marginRight: SIZES.medium,
   },
   btnImg: (dimension) => ({
     width: dimension,
     height: dimension,
-    borderRadius: SIZES.small / 1.25,
   }),
+  btnText: {
+    fontFamily: FONT.bodoniBold,
+    fontSize: SIZES.medium,
+  },
 });
 
 export default styles;
