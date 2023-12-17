@@ -1,22 +1,28 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const useFetch = (endpoint, method) => {
+const useFetch = (endpoint) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
   const options = {
-    method: method,
-    url: `https://projectdev.alwaysdata.net/loufok/api/${endpoint}`,
+    method: "GET",
+    url: `https:///${endpoint}`,
+    headers: {
+      Accept: "application/json",
+    },
   };
 
   const fetchData = async () => {
     setIsLoading(true);
 
     try {
-      const response = await axios.request(options);
-
+      // const response = await axios.request(options);
+      const response = await fetch(options.url, {
+        method: options.method,
+      });
+      console.log(response);
       setData(response);
       setIsLoading(false);
     } catch (error) {

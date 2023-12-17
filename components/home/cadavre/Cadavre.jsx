@@ -8,8 +8,7 @@ import useFetch from "../../../hook/useFetch";
 
 const Cadavre = () => {
   const router = useRouter();
-  const { data, isLoading, error } = useFetch("cadavres", "GET");
-  console.log(data);
+  const { data, isLoading, error } = useFetch("cadavres");
 
   return (
     <View style={styles.container}>
