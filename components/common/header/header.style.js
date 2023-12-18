@@ -7,6 +7,11 @@ const styles = StyleSheet.create({
     width: "100%",
     height: SIZES.xxLarge * 3.5,
     backgroundColor: COLORS.white,
+    flexDirection: "row",
+    alignItems: "center",
+
+    marginTop: SIZES.xLarge,
+    gap: SIZES.medium,
     paddingStart: SIZES.large,
     borderBottomLeftRadius: SIZES.large,
     borderBottomRightRadius: SIZES.large,
@@ -17,11 +22,11 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     alignItems: "center",
-    marginTop: SIZES.small,
+    // marginTop: SIZES.xLarge,
   },
   logoImgContainer: {
-    width: SIZES.xxLarge * 2,
-    height: SIZES.xxLarge * 2,
+    width: SIZES.xxLarge * 2.5,
+    height: SIZES.xxLarge * 2.5,
   },
   logoImg: (dimension) => ({
     width: dimension,
@@ -29,8 +34,9 @@ const styles = StyleSheet.create({
   }),
   logoText: {
     fontFamily: FONT.bodoniBold,
-    fontSize: SIZES.medium,
+    fontSize: SIZES.large,
     color: COLORS.secondary,
+    marginRight: -2,
   },
 });
 

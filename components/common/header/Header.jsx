@@ -1,18 +1,21 @@
-import {
-  Text,
-  Image,
-  TouchableOpacity,
-  SafeAreaView,
-  View,
-} from "react-native";
+import { Text, Image, SafeAreaView, View } from "react-native";
 
 import styles from "./header.style";
-import { COLORS } from "../../../constants";
+import { SIZES, icons } from "../../../constants";
 
-const Header = ({ imagesUrl, dimension }) => {
+import ScreenHearderBtn from "../../../components/common/header/ScreenHeaderBtn";
+
+const Header = ({ imagesUrl, dimension, backBtn, handlePress }) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.container}>
+        {backBtn ? (
+          <ScreenHearderBtn
+            iconUrl={icons.left}
+            dimension={SIZES.medium}
+            handlePress={handlePress}
+          />
+        ) : null}
         <View style={styles.logoContainer}>
           <Text style={styles.logoText}>Daylire</Text>
           <View style={styles.logoImgContainer}>

@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
   },
   heartContainer: {
     position: "absolute",
-    top: "50%",
+    top: "43%",
     padding: SIZES.medium,
     backgroundColor: COLORS.white,
     right: SIZES.large,
@@ -18,14 +18,10 @@ const styles = StyleSheet.create({
     borderWidth: 6,
     zIndex: 1,
   },
-  heartImg: {
-    width: SIZES.xLarge,
-    height: SIZES.xLarge,
-    tintColor: COLORS.secondary,
-  },
   textContainer: {
     backgroundColor: COLORS.secondary,
-    padding: SIZES.medium,
+    paddingHorizontal: SIZES.medium,
+    paddingVertical: SIZES.xLarge,
     gap: SIZES.small / 2,
     borderBottomLeftRadius: SIZES.small,
     borderBottomRightRadius: SIZES.small,

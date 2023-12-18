@@ -8,7 +8,7 @@ import AvatarMosaic from "./common/cards/cadavre/AvartarMosaic";
 import Authors from "./cadavredetails/authors/Authors";
 import Contributions from "./cadavredetails/contributions/Contributions";
 import Infos from "./cadavredetails/infos/Infos";
-// import Like from "./cadavredetails/like/Like";
+import Like from "./cadavredetails/like/Like";
 
 export {
   ScreenHeaderBtn,
@@ -19,5 +19,5 @@ export {
   Authors,
   Contributions,
   Infos,
-  //   Like,
+  Like,
 };

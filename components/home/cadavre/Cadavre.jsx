@@ -1,5 +1,5 @@
 import { useRouter } from "expo-router";
-import { View, Text, TouchableOpacity, ActivityIndicator } from "react-native";
+import { View, Text, ActivityIndicator } from "react-native";
 
 import { COLORS } from "../../../constants";
 import styles from "./cadavre.style";
