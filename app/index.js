@@ -9,7 +9,7 @@ const Home = () => {
     <SafeAreaView
       style={{
         flex: 1,
-        marginTop: SIZES.xxLarge * 3.2,
+        marginTop: SIZES.xxLarge * 4,
         backgroundColor: COLORS.white,
       }}
     >

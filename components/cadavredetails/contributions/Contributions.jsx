@@ -1,17 +1,11 @@
 import { View, Text } from "react-native";
 
+import { decodeHTMLEntities } from "../../../utils";
+
 import styles from "./contributions.style";
 
-const About = ({ info }) => {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.headText}>About the job:</Text>
-
-      <View style={styles.contentBox}>
-        <Text style={styles.contextText}>{info}</Text>
-      </View>
-    </View>
-  );
+const Contributions = ({ contribution }) => {
+  return <Text style={styles.text}>{decodeHTMLEntities(contribution)}</Text>;
 };
 
-export default About;
+export default Contributions;

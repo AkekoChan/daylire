@@ -1,40 +1,42 @@
 import { StyleSheet } from "react-native";
 
-import { COLORS, FONT, SIZES } from "../../../constants";
+import { COLORS, FONT, SIZES, SHADOWS } from "../../../constants";
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: SIZES.large,
-    backgroundColor: "#FFF",
-    borderRadius: SIZES.medium,
-    padding: SIZES.medium,
+    gap: SIZES.medium,
   },
   title: {
-    fontSize: SIZES.large,
-    color: COLORS.primary,
-    fontFamily: FONT.bold,
+    fontSize: SIZES.xLarge,
+    color: COLORS.secondary,
+    fontFamily: FONT.bodoniBold,
   },
-  pointsContainer: {
-    marginVertical: SIZES.small,
-  },
-  pointWrapper: {
+  authorsContainer: {
     flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
-    marginVertical: SIZES.small / 1.25,
+    flexWrap: "wrap",
   },
-  pointDot: {
-    width: 6,
-    height: 6,
-    borderRadius: 6,
-    backgroundColor: COLORS.gray2,
-    marginTop: 6,
+  authorContainer: {
+    width: "50%",
+    flexDirection: "row",
+    alignItems: "center",
+    gap: SIZES.small - 2,
+    marginBottom: SIZES.small,
   },
-  pointText: {
-    fontSize: SIZES.medium - 2,
-    color: COLORS.gray,
-    fontFamily: FONT.regular,
-    marginLeft: SIZES.small,
+  authorImageContainer: {
+    borderColor: COLORS.gray2,
+    borderWidth: 2,
+    ...SHADOWS.custom,
+    borderRadius: SIZES.small / 1.25,
+  },
+  authorImage: {
+    width: 42,
+    height: 42,
+    borderRadius: SIZES.small / 1.25,
+  },
+  authorName: {
+    fontFamily: FONT.senRegular,
+    color: COLORS.secondary,
+    flexShrink: 1,
   },
 });
 

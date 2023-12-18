@@ -6,7 +6,7 @@ import styles from "./like.style";
 const Like = () => {
   return (
     <View>
-      <Text>Infos</Text>
+      <Text>Like</Text>
     </View>
   );
 };
