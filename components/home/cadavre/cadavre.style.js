@@ -5,9 +5,9 @@ import { COLORS, FONT, SIZES } from "../../../constants";
 const styles = StyleSheet.create({
   container: {
     width: "100%",
-    alignItems: "center",
+    // paddingHorizontal: SIZES.medium,
   },
-  headTitle: {
+  title: {
     fontFamily: FONT.bodoniBold,
     fontSize: SIZES.xxLarge,
     color: COLORS.secondary,

@@ -4,7 +4,10 @@
     "web": {
       "bundler": "metro"
     },
-    "name": "jobsift",
-    "slug": "jobsift"
+    "name": "Daylire",
+    "slug": "Daylire",
+    "plugins": [
+      "expo-router"
+    ]
   }
 }
