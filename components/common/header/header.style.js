@@ -5,10 +5,9 @@ import { COLORS, SIZES, FONT, SHADOWS } from "../../../constants";
 const styles = StyleSheet.create({
   container: {
     width: "100%",
-    height: SIZES.xxLarge * 4,
+    height: SIZES.xxLarge * 3.5,
     backgroundColor: COLORS.white,
-    alignItems: "flex-end",
-    paddingHorizontal: SIZES.small,
+    paddingStart: SIZES.large,
     borderBottomLeftRadius: SIZES.large,
     borderBottomRightRadius: SIZES.large,
     borderBottomColor: COLORS.gray,

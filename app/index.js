@@ -1,17 +1,22 @@
 import { View, SafeAreaView, ScrollView, Text } from "react-native";
-import { Stack, useRouter } from "expo-router";
+import { Stack } from "expo-router";
 
-import { COLORS, icons, images, SIZES } from "../constants";
-import { ScreenHeaderBtn, Header, Cadavre } from "../components";
+import { COLORS, images, SIZES } from "../constants";
+import { Header, Cadavre } from "../components";
 
 const Home = () => {
   return (
     <SafeAreaView
-      style={{ flex: 1, marginTop: 128, backgroundColor: COLORS.white }}
+      style={{
+        flex: 1,
+        marginTop: SIZES.xxLarge * 3.2,
+        backgroundColor: COLORS.white,
+      }}
     >
       <Stack.Screen
         options={{
           header: () => <Header imagesUrl={images.logo} dimension="100%" />,
+          headerShadowVisible: false,
         }}
       />
 
@@ -19,7 +24,7 @@ const Home = () => {
         <View
           style={{
             flex: 1,
-            padding: SIZES.medium,
+            padding: SIZES.xxLarge,
           }}
         >
           <Cadavre />

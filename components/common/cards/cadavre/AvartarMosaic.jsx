@@ -6,7 +6,7 @@ import styles from "./avatarmosaic.style";
 const AvatarMosaic = ({ cadavre }) => {
   return (
     <View style={styles.mosaicContainer}>
-      {cadavre.cadavre.contributeurs.map((contributeur, index) => (
+      {cadavre.contributeurs.map((contributeur, index) => (
         <Image
           key={index}
           style={styles.avatar}

@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, ActivityIndicator } from "react-native";
 
 import { COLORS } from "../../../constants";
 import styles from "./cadavre.style";
-import CadavreCard from "../../common/cards/cadavre/CadavreCard";
+import CadavreCard from "../../../components/common/cards/cadavre/CadavreCard";
 import useFetch from "../../../hook/useFetch";
 
 const Cadavre = () => {
@@ -13,7 +13,7 @@ const Cadavre = () => {
   const listCadavres = data.cadavres;
 
   return (
-    <View style={styles.container}>
+    <View>
       <Text style={styles.title}>Avec Daylire : lisez et appréciez !</Text>
 
       <View style={styles.cardsContainer}>
@@ -23,7 +23,13 @@ const Cadavre = () => {
           <Text>Il y a une erreur !</Text>
         ) : (
           listCadavres?.map((cadavre) => (
-            <CadavreCard cadavre={cadavre} key={cadavre.id_cadavre} />
+            <CadavreCard
+              cadavre={cadavre}
+              key={cadavre.id_cadavre}
+              handleCardPress={() =>
+                router.push(`/cadavre-details/${cadavre.id_cadavre}`)
+              }
+            />
           ))
         )}
       </View>
