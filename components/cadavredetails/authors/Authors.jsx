@@ -5,6 +5,7 @@ import styles from "./authors.style";
 const Authors = ({ authors }) => {
   return (
     <View style={styles.container}>
+      <View style={styles.separator}></View>
       <Text style={styles.title}>Les participants de ce Cadavre Exquis</Text>
 
       <View style={styles.authorsContainer}>

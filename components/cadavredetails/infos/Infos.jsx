@@ -4,7 +4,6 @@ import { View, Text } from "react-native";
 import styles from "./infos.style";
 
 const Infos = ({ data }) => {
-  console.log(data);
   return (
     <View style={styles.infosContainer}>
       <Text style={styles.infosTitle}>{data.titre}</Text>

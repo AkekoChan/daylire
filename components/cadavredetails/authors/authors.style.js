@@ -5,8 +5,10 @@ import { COLORS, FONT, SIZES, SHADOWS } from "../../../constants";
 const styles = StyleSheet.create({
   container: {
     gap: SIZES.medium,
+    alignItems: "center",
   },
   title: {
+    width: "100%",
     fontSize: SIZES.xLarge,
     color: COLORS.secondary,
     fontFamily: FONT.bodoniBold,
@@ -24,9 +26,12 @@ const styles = StyleSheet.create({
   },
   authorImageContainer: {
     borderColor: COLORS.gray2,
-    borderWidth: 2,
-    ...SHADOWS.custom,
     borderRadius: SIZES.small / 1.25,
+    justifyContent: "center",
+    alignItems: "center",
+    borderColor: COLORS.gray2,
+    borderWidth: SIZES.small / 10,
+    ...SHADOWS.custom,
   },
   authorImage: {
     width: 42,
@@ -37,6 +42,11 @@ const styles = StyleSheet.create({
     fontFamily: FONT.senRegular,
     color: COLORS.secondary,
     flexShrink: 1,
+  },
+  separator: {
+    height: 2,
+    width: 120,
+    backgroundColor: COLORS.gray2,
   },
 });
 
