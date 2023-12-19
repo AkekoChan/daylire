@@ -1,15 +1,16 @@
 import { useRouter } from "expo-router";
 import { View, Text, ActivityIndicator } from "react-native";
-
 import { COLORS } from "../../../constants";
 import styles from "./cadavre.style";
 import CadavreCard from "../../../components/common/cards/cadavre/CadavreCard";
 import useFetch from "../../../hook/useFetch";
+import { useLikeContext } from "../../../utils/likeContext"; // Remplacez par le bon chemin
+import { useEffect } from "react";
 
 const Cadavre = () => {
   const router = useRouter();
   const { data, isLoading, error } = useFetch("cadavres", "GET");
-
+  const { likedCadavres } = useLikeContext(); // Utilisez le contexte
   const listCadavres = data.cadavres;
 
   return (
@@ -24,6 +25,7 @@ const Cadavre = () => {
         ) : (
           listCadavres?.map((cadavre) => (
             <CadavreCard
+              liked={likedCadavres[cadavre.id_cadavre] === true}
               cadavre={cadavre}
               key={cadavre.id_cadavre}
               handleCardPress={() =>

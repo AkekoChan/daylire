@@ -8,12 +8,17 @@ import { COLORS, SIZES, icons } from "../../../../constants";
 import styles from "./cadavrecard.style";
 import { AntDesign } from "@expo/vector-icons";
 
-const CadavreCard = ({ cadavre, handleCardPress }) => {
+const CadavreCard = ({ cadavre, handleCardPress, liked }) => {
+  console.log(liked);
   return (
     <TouchableOpacity style={styles.cardContainer} onPress={handleCardPress}>
       <AvatarMosaic cadavre={cadavre} />
       <View style={styles.heartContainer}>
-        <AntDesign name="hearto" size={SIZES.medium} color={COLORS.secondary} />
+        <AntDesign
+          name={liked ? "heart" : "hearto"}
+          size={SIZES.medium}
+          color={COLORS.secondary}
+        />
       </View>
       <View style={styles.textContainer}>
         <Text style={styles.title}>

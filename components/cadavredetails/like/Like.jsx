@@ -1,13 +1,60 @@
-import React from "react";
-import { View, Text } from "react-native";
-
+import React, { useState, useEffect } from "react";
+import { View, Text, TouchableOpacity, Image } from "react-native";
+import { icons } from "../../../constants";
 import styles from "./like.style";
+import { useLikeContext } from "../../../utils/likeContext"; // Remplacez par le bon chemin
 
-const Like = () => {
+const Like = ({ id, nbLike }) => {
+  const [liked, setLiked] = useState(false);
+  const [likeResult, setLikeResult] = useState(nbLike);
+  const { likedCadavres, updateLikes } = useLikeContext(); // Utilisez le contexte
+
+  useEffect(() => {
+    likeResult;
+    setLiked(likedCadavres[id] === true);
+  }, [likedCadavres, id]);
+
+  const handleLike = async () => {
+    setLiked(!liked);
+
+    updateLikes(id, !liked);
+
+    try {
+      const options = {
+        method: "POST",
+        url: "https://projectdev.alwaysdata.net/loufok/api/cadavre/like",
+        body: JSON.stringify({
+          id: id,
+        }),
+      };
+
+      const response = await fetch(options.url, {
+        body: options.body,
+        method: options.method,
+      });
+      const data = await response.json();
+      setLikeResult(data.likes);
+      // console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
-    <View>
-      <Text>Like</Text>
-    </View>
+    <TouchableOpacity
+      style={[styles.likeBtn, liked ? styles.likedBtn : null]}
+      onPress={() => handleLike()}
+    >
+      <View style={styles.likeContainer}>
+        <Image
+          source={icons.heart}
+          style={[styles.likeIcon, liked ? styles.likedIcon : null]}
+        />
+        <Text style={liked ? styles.likedText : styles.likeText}>
+          {likeResult}
+        </Text>
+      </View>
+    </TouchableOpacity>
   );
 };
 
