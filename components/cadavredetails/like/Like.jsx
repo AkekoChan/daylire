@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import { icons } from "../../../constants";
 import styles from "./like.style";
-import { useLikeContext } from "../../../utils/likeContext"; // Remplacez par le bon chemin
+import { useLikeContext } from "../../../utils/likeContext";
 
 const Like = ({ id, nbLike }) => {
   const [liked, setLiked] = useState(false);
   const [likeResult, setLikeResult] = useState(nbLike);
-  const { likedCadavres, updateLikes } = useLikeContext(); // Utilisez le contexte
+  const { likedCadavres, updateLikes } = useLikeContext();
 
   useEffect(() => {
     likeResult;
