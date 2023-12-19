@@ -50,7 +50,7 @@ const Like = ({ id, nbLike }) => {
           source={icons.heart}
           style={[styles.likeIcon, liked ? styles.likedIcon : null]}
         />
-        <Text style={liked ? styles.likedText : styles.likeText}>
+        <Text style={[styles.likeText, liked ? styles.likedText : null]}>
           {likeResult}
         </Text>
       </View>
