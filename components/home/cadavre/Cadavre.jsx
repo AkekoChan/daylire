@@ -4,18 +4,19 @@ import { COLORS } from "../../../constants";
 import styles from "./cadavre.style";
 import CadavreCard from "../../../components/common/cards/cadavre/CadavreCard";
 import { useLikeContext } from "../../../utils/likeContext";
-// import { useUpdateContext } from "../../../utils/updateContext";
+import useFetch from "../../../hook/useFetch";
 import { useEffect } from "react";
 
-const Cadavre = ({ data, isLoading, error }) => {
+const Cadavre = () => {
   const router = useRouter();
+  const { data, isLoading, error } = useFetch("cadavres", "GET");
   const { likedCadavres } = useLikeContext();
-  // const { update, forceUpdate } = useUpdateContext();
   const listCadavres = data.cadavres;
 
-  // useEffect(() => {
-  //   forceUpdate();
-  // }, [update]);
+  useEffect(() => {
+    likedCadavres;
+    console.log("likedCadavres", likedCadavres);
+  }, [likedCadavres]);
 
   return (
     <View>

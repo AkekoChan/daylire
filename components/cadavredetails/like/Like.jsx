@@ -6,11 +6,10 @@ import { useLikeContext } from "../../../utils/likeContext";
 
 const Like = ({ id, nbLike }) => {
   const [liked, setLiked] = useState(false);
-  const [likeResult, setLikeResult] = useState(nbLike);
+  const [likeResult, setLikeResult] = useState();
   const { likedCadavres, updateLikes } = useLikeContext();
 
   useEffect(() => {
-    likeResult;
     setLiked(likedCadavres[id] === true);
   }, [likedCadavres, id]);
 
@@ -51,7 +50,7 @@ const Like = ({ id, nbLike }) => {
           style={[styles.likeIcon, liked ? styles.likedIcon : null]}
         />
         <Text style={[styles.likeText, liked ? styles.likedText : null]}>
-          {likeResult}
+          {likeResult ? likeResult : nbLike}
         </Text>
       </View>
     </TouchableOpacity>
