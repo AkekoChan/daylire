@@ -20,9 +20,7 @@ const CadavreCard = ({ cadavre, handleCardPress, liked }) => {
         />
       </View>
       <View style={styles.textContainer}>
-        <Text style={styles.title}>
-          {cadavre.titre} {cadavre.titre}
-        </Text>
+        <Text style={styles.title}>{cadavre.titre}</Text>
         <Text style={styles.description} numberOfLines={3}>
           {decodeHTMLEntities(cadavre.premiere_contribution)}
         </Text>

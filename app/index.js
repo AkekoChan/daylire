@@ -4,7 +4,7 @@ import { Stack } from "expo-router";
 
 import { COLORS, images, SIZES } from "../constants";
 import { Header, Cadavre } from "../components";
-import { LikeProvider, useLikeContext } from "../utils/likeContext";
+import { LikeProvider } from "../utils/likeContext";
 
 const Home = () => {
   return (

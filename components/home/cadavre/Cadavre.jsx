@@ -16,7 +16,6 @@ const Cadavre = () => {
   const listCadavres = data.cadavres;
 
   useEffect(() => {
-    likedCadavres;
     console.log("Le composant est rendu à nouveau", likedCadavres);
   }, [isFocused, likedCadavres]);
 
@@ -32,7 +31,7 @@ const Cadavre = () => {
         ) : (
           listCadavres?.map((cadavre) => (
             <CadavreCard
-              liked={likedCadavres[cadavre.id_cadavre] === true}
+              liked={likedCadavres[cadavre.id_cadavre]}
               cadavre={cadavre}
               key={cadavre.id_cadavre}
               handleCardPress={() =>

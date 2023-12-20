@@ -3,7 +3,6 @@ import { View, Text, TouchableOpacity, Image } from "react-native";
 import { icons } from "../../../constants";
 import styles from "./like.style";
 import { useLikeContext } from "../../../utils/likeContext";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const Like = ({ id, nbLike }) => {
   const [liked, setLiked] = useState(false);
@@ -11,14 +10,12 @@ const Like = ({ id, nbLike }) => {
   const { likedCadavres, updateLikes } = useLikeContext();
 
   useEffect(() => {
-    setLiked(likedCadavres[id] === true);
-    console.log("likedCadavres[id]", likedCadavres[id]);
+    setLiked(likedCadavres[id]);
   }, [likedCadavres, id]);
 
   const handleLike = async () => {
-    setLiked(!liked);
-
     updateLikes(id, !liked);
+    setLiked(!liked);
 
     try {
       const options = {
@@ -35,18 +32,6 @@ const Like = ({ id, nbLike }) => {
       });
       const data = await response.json();
       setLikeResult(data.likes);
-
-      console.log("likedCadavres après la mise à jour :", likedCadavres);
-
-      // Débogage : vérifier si le résultat de la mise à jour est correct
-      console.log("Résultat de la mise à jour :", data);
-
-      // Débogage : vérifier si le AsyncStorage est correctement mis à jour
-      const storedLikes = await AsyncStorage.getItem("likedCadavres");
-      console.log(
-        "likedCadavres dans AsyncStorage après la mise à jour :",
-        storedLikes
-      );
     } catch (error) {
       console.log(error);
     }
