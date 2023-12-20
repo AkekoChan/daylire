@@ -12,10 +12,16 @@ const styles = StyleSheet.create({
     height: 180,
     borderTopLeftRadius: SIZES.small,
     borderTopRightRadius: SIZES.small,
+    overflow: "hidden",
   },
   avatar: {
+    position: "absolute",
     width: SIZES.xLarge * 2,
     height: SIZES.xLarge * 2,
+    borderColor: COLORS.gray2,
+    borderRadius: SIZES.small / 1.25,
+    borderColor: COLORS.gray2,
+    borderWidth: SIZES.small / 10,
   },
 });
 

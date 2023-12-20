@@ -9,6 +9,7 @@ export const LikeProvider = ({ children }) => {
   useEffect(() => {
     const fetchLikes = async () => {
       const storedLikes = await AsyncStorage.getItem("likedCadavres");
+      console.log("Récuparation des likes :", storedLikes);
       if (storedLikes) {
         setLikedCadavres(JSON.parse(storedLikes));
       }
@@ -18,8 +19,10 @@ export const LikeProvider = ({ children }) => {
   }, []);
 
   const updateLikes = async (id, liked) => {
+    console.log("Update likes. Id:", id, "Liked:", liked);
     const updatedLikes = { ...likedCadavres, [id]: liked };
     setLikedCadavres(updatedLikes);
+    console.log("Likes mis à jour :", updatedLikes);
     await AsyncStorage.setItem("likedCadavres", JSON.stringify(updatedLikes));
   };
 

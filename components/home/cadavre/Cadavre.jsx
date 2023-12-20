@@ -5,18 +5,20 @@ import styles from "./cadavre.style";
 import CadavreCard from "../../../components/common/cards/cadavre/CadavreCard";
 import { useLikeContext } from "../../../utils/likeContext";
 import useFetch from "../../../hook/useFetch";
+import { useIsFocused } from "@react-navigation/native";
 import { useEffect } from "react";
 
 const Cadavre = () => {
   const router = useRouter();
   const { data, isLoading, error } = useFetch("cadavres", "GET");
   const { likedCadavres } = useLikeContext();
+  const isFocused = useIsFocused();
   const listCadavres = data.cadavres;
 
   useEffect(() => {
     likedCadavres;
-    console.log("likedCadavres", likedCadavres);
-  }, [likedCadavres]);
+    console.log("Le composant est rendu à nouveau", likedCadavres);
+  }, [isFocused, likedCadavres]);
 
   return (
     <View>

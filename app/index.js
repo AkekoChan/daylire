@@ -1,10 +1,10 @@
-import { useState, useCallback } from "react";
+import { useEffect } from "react";
 import { View, SafeAreaView, ScrollView, RefreshControl } from "react-native";
 import { Stack } from "expo-router";
 
 import { COLORS, images, SIZES } from "../constants";
 import { Header, Cadavre } from "../components";
-import { LikeProvider } from "../utils/likeContext";
+import { LikeProvider, useLikeContext } from "../utils/likeContext";
 
 const Home = () => {
   return (
