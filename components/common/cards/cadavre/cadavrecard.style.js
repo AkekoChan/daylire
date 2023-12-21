@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
   },
   heartContainer: {
     position: "absolute",
-    top: "43%",
+    top: "48%",
     padding: SIZES.medium,
     backgroundColor: COLORS.white,
     right: SIZES.large,

@@ -1,6 +1,7 @@
 import { Stack } from "expo-router";
 import { useCallback } from "react";
 import { useFonts } from "expo-font";
+import { LikeProvider } from "../utils/likeContext";
 import * as SplashScreen from "expo-splash-screen";
 
 SplashScreen.preventAutoHideAsync();
@@ -20,7 +21,11 @@ const Layout = () => {
     return null;
   }
 
-  return <Stack onLayout={onLayoutRootView} />;
+  return (
+    <LikeProvider>
+      <Stack onLayout={onLayoutRootView} />
+    </LikeProvider>
+  );
 };
 
 export default Layout;

@@ -7,6 +7,7 @@ import { useLikeContext } from "../../../utils/likeContext";
 const Like = ({ id, nbLike }) => {
   const [liked, setLiked] = useState(false);
   const [likeResult, setLikeResult] = useState();
+  const [loading, setLoading] = useState(false); // Nouvelle variable d'état
   const { likedCadavres, updateLikes } = useLikeContext();
 
   useEffect(() => {
@@ -14,8 +15,11 @@ const Like = ({ id, nbLike }) => {
   }, [likedCadavres, id]);
 
   const handleLike = async () => {
-    updateLikes(id, !liked);
-    setLiked(!liked);
+    if (loading) {
+      return; // Ne rien faire si la requête est déjà en cours
+    }
+
+    setLoading(true);
 
     try {
       const options = {
@@ -32,8 +36,12 @@ const Like = ({ id, nbLike }) => {
       });
       const data = await response.json();
       setLikeResult(data.likes);
+      updateLikes(id, !liked);
+      setLiked(!liked);
     } catch (error) {
       console.log(error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -41,6 +49,7 @@ const Like = ({ id, nbLike }) => {
     <TouchableOpacity
       style={[styles.likeBtn, liked ? styles.likedBtn : null]}
       onPress={() => handleLike()}
+      disabled={loading} // Désactive le bouton pendant le chargement
     >
       <View style={styles.likeContainer}>
         <Image
