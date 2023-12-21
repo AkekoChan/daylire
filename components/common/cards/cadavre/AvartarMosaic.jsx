@@ -2,17 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Image, View } from "react-native";
 
 import styles from "./avatarmosaic.style";
+import { SIZES } from "../../../../constants";
 
 const AvatarMosaic = ({ cadavre }) => {
-  const randomPosX = () => {
-    const positions = [5, 10, 20, 30, 40, 50, 60, 70, 80];
-    return positions[Math.floor(Math.random() * positions.length)];
-  };
-
-  const randomPosY = () => {
-    const positions = [5, 10, 20, 30, 40, 50, 60, 70, 80];
-    return positions[Math.floor(Math.random() * positions.length)];
-  };
+  const random = (min, max) => { return Math.floor(Math.random() * (max - min) + min); }
 
   return (
     <View style={styles.mosaicContainer}>
@@ -22,8 +15,8 @@ const AvatarMosaic = ({ cadavre }) => {
           style={[
             styles.avatar,
             {
-              left: `${randomPosX()}%`,
-              top: `${randomPosY()}%`,
+             left: `${random(0, 7) * (SIZES.xLarge * 2)}px`,
+             top: `${random(0, 3) * (SIZES.xLarge * 2)}px`
             },
           ]}
           source={{

@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
     position: "relative",
     flexDirection: "row",
     flexWrap: "wrap",
-    alignItems: "center",
+    // alignItems: "center",
     backgroundColor: COLORS.primary,
     height: 180,
     borderTopLeftRadius: SIZES.small,
