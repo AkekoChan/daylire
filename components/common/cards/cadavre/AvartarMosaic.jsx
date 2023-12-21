@@ -5,7 +5,9 @@ import styles from "./avatarmosaic.style";
 import { SIZES } from "../../../../constants";
 
 const AvatarMosaic = ({ cadavre }) => {
-  const random = (min, max) => { return Math.floor(Math.random() * (max - min) + min); }
+  const random = (min, max) => {
+    return Math.floor(Math.random() * (max - min) + min);
+  };
 
   return (
     <View style={styles.mosaicContainer}>
@@ -15,8 +17,8 @@ const AvatarMosaic = ({ cadavre }) => {
           style={[
             styles.avatar,
             {
-             left: `${random(0, 7) * (SIZES.xLarge * 2)}px`,
-             top: `${random(0, 3) * (SIZES.xLarge * 2)}px`
+              left: random(0, 7) * SIZES.xLarge * 2,
+              top: random(0, 3) * SIZES.xLarge * 2,
             },
           ]}
           source={{
