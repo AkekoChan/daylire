@@ -3,21 +3,20 @@ import { StyleSheet } from "react-native";
 import { COLORS, SIZES, FONT, SHADOWS } from "../../../constants";
 
 const styles = StyleSheet.create({
-  container: {
+  container: (heightStatusBar) => ({
     width: "100%",
     height: SIZES.xxLarge * 3.5,
     backgroundColor: COLORS.white,
     flexDirection: "row",
     alignItems: "center",
-
-    marginTop: SIZES.xLarge,
+    marginTop: heightStatusBar,
     gap: SIZES.medium,
     paddingStart: SIZES.large,
     borderBottomLeftRadius: SIZES.large,
     borderBottomRightRadius: SIZES.large,
     borderBottomColor: COLORS.gray,
     ...SHADOWS.custom,
-  },
+  }),
   logoContainer: {
     flex: 1,
     flexDirection: "row",

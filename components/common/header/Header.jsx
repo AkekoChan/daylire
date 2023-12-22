@@ -1,4 +1,4 @@
-import { Text, Image, SafeAreaView, View } from "react-native";
+import { Text, Image, SafeAreaView, View, StatusBar } from "react-native";
 
 import styles from "./header.style";
 import { SIZES, icons } from "../../../constants";
@@ -8,7 +8,7 @@ import ScreenHearderBtn from "../../../components/common/header/ScreenHeaderBtn"
 const Header = ({ imagesUrl, dimension, backBtn, handlePress }) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <View style={styles.container}>
+      <View style={styles.container(StatusBar.currentHeight)}>
         {backBtn ? (
           <ScreenHearderBtn
             iconUrl={icons.left}

@@ -1,6 +1,5 @@
 import { Stack, useRouter, useGlobalSearchParams } from "expo-router";
 
-import React from "react";
 import {
   View,
   Text,
