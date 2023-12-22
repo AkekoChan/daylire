@@ -16,7 +16,6 @@ const Cadavre = () => {
   const listCadavres = data.cadavres;
 
   useEffect(() => {
-    console.log("Le composant est rendu à nouveau", likedCadavres);
     likedCadavres;
   }, [isFocused, likedCadavres]);
 

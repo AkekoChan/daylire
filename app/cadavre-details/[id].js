@@ -13,7 +13,6 @@ import { SIZES, COLORS, images } from "../../constants";
 import { Authors, Contributions, Infos, Like, Header } from "../../components";
 
 import useFetch from "../../hook/useFetch";
-import { LikeProvider } from "../../utils/likeContext";
 
 const CadavreDetails = () => {
   const params = useGlobalSearchParams();
